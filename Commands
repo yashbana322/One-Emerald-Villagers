@@ -1,0 +1,32 @@
+Commands:-
+Command 1 — Set first item price to 1
+code:- execute as @e[type=minecraft:villager,name="OneEmerald"] run data modify entity @s Offers.Recipes[].buy.Count set value 1b
+What does it do?
+Makes trades cost 1 item instead of many
+✔ Example: 32 sticks → 1 stick
+
+
+Command 2 — Set second item price to 1
+code:- execute as @e[type=minecraft:villager,name="OneEmerald"] run data modify entity @s Offers.Recipes[].buyB.Count set value 1b
+What does it do?
+✔ Required for enchanted books
+✔ Safe for trades without a second item
+
+
+Command 3 — Infinite trades
+code:- execute as @e[type=minecraft:villager,name="OneEmerald"] run data modify entity @s Offers.Recipes[].maxUses set value 2147483647
+What does it do?
+✔ Prevents trade exhaustion
+✔ Effectively infinite stock
+
+Command 4 — Reset trade usage
+code:- execute as @e[type=minecraft:villager,name="OneEmerald"] run data modify entity @s Offers.Recipes[].uses set value 0
+What does it do? 
+✔ Instantly unlocks trades
+✔ Fixes already-locked villagers
+
+Command 5 — Remove price inflation
+code:- execute as @e[type=minecraft:villager,name="OneEmerald"] run data modify entity @s Offers.Recipes[].demand set value 0
+What does it do?
+✔ Prevents prices from increasing
+✔ Keeps trades stable forever
